@@ -40,8 +40,8 @@
 //       isClose = false;
 // console.log(isChecked || isClose);
 
-console.log('35' + - '22');
-console.log('35' * '22');
+// console.log('35' + - '22');
+// console.log('35' * '22');
 // console.log(+'558' > 22++); не верно
 
 // let prob = 0;
@@ -50,3 +50,24 @@ console.log('35' * '22');
 
 // console.log(!false && 11 || 18 && !'');  Не верно
 
+
+// Задача 1
+const numberOfFilms = +prompt('Сколько фильмов вы уже просмотрели?','');
+
+const perconalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false
+};
+
+const a = prompt('Один из последних просмотренных фильмов?','');
+const b = prompt('На сколько оцените его?','');
+const c = prompt('Один из последних просмотренных фильмов?','');
+const d = prompt('На сколько оцените его?','');
+
+perconalMovieDB.movies[a] = b;
+perconalMovieDB.movies[c] = d;
+
+console.log(perconalMovieDB);
