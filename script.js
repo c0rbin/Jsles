@@ -34,8 +34,19 @@
 // console.log(incr++);
 // console.log(decr--);
 
-console.log(2 + 2 * 2 !== '6');
+// console.log(2 + 2 * 2 !== '6');
 
 // const isChecked = true,
 //       isClose = false;
 // console.log(isChecked || isClose);
+
+console.log('35' + - '22');
+console.log('35' * '22');
+// console.log(+'558' > 22++); не верно
+
+// let prob = 0;
+// let newProb = prob++;
+// console.log(newProb);    не верно
+
+// console.log(!false && 11 || 18 && !'');  Не верно
+
