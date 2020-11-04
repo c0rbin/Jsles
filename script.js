@@ -52,7 +52,7 @@
 
 
 // Задача 1
-const numberOfFilms = +prompt('Сколько фильмов вы уже просмотрели?','');
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?','');
 
 const perconalMovieDB = {
   count: numberOfFilms,
@@ -62,10 +62,10 @@ const perconalMovieDB = {
   privat: false
 };
 
-const a = prompt('Один из последних просмотренных фильмов?','');
-const b = prompt('На сколько оцените его?','');
-const c = prompt('Один из последних просмотренных фильмов?','');
-const d = prompt('На сколько оцените его?','');
+const a = prompt('Один из последних просмотренных фильмов?', ''),
+      b = prompt('На сколько оцените его?', ''),
+      c = prompt('Один из последних просмотренных фильмов?', ''),
+      d = prompt('На сколько оцените его?', '');
 
 perconalMovieDB.movies[a] = b;
 perconalMovieDB.movies[c] = d;
