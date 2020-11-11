@@ -251,4 +251,29 @@ function sayHiBye(firstName, lastName) {
   alert('Ну что ж пока наша ' + getFullName());
 }
 
-sayHiBye('Милая моя', 'Карина');
+// sayHiBye('Милая моя', 'Карина');
+
+// Методы и свойства строк и чисел урок №17
+
+const str = 'tEst';
+console.log(str);
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+
+const fruit = 'Some fruit';
+
+console.log(fruit.indexOf('fruit'));
+
+const logg = 'Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum';
+
+// console.log(logg.indexOf('Letraset'));
+// console.log(logg.slice(464, 472));
+// console.log(logg.substring(464, 472));
+console.log(logg.substr(464, 472));
+
+const num = 12.2;
+console.log(Math.round(num));
+
+const test = '12.2px';
+console.log(parseInt(test));
+console.log(parseFloat(test));
