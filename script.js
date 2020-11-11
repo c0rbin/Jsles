@@ -109,7 +109,7 @@
 
 // Циклы
 
-let num = 50;
+// let num = 50;
 
 // while (num <= 55) {
 //   console.log(num);
@@ -129,39 +129,126 @@ let num = 50;
 // }
 // Lesson 12
 
-const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?','');
+// const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?','');
 
-const perconalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false
-};
+// const perconalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
 
 
-for (let i = 0; i < 2; i++){
-  const a = prompt('Один из последних просмотренных фильмов?', ''),
-        b = prompt('На сколько оцените его?', '');
+// for (let i = 0; i < 2; i++){
+//   const a = prompt('Один из последних просмотренных фильмов?', ''),
+//         b = prompt('На сколько оцените его?', '');
   
-  if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-    perconalMovieDB.movies[a] = b;
-    console.log('done');
-  } else {
-    console.log('error!');
-    i--;
-  }
+//   if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//     perconalMovieDB.movies[a] = b;
+//     console.log('done');
+//   } else {
+//     console.log('error!');
+//     i--;
+//   }
 
-  if (perconalMovieDB.count < 10) {
-    console.log('Просмотрено мало фильмов');
-  } else if (perconalMovieDB.count >= 10 && perconalMovieDB.count < 30) {
-    console.log('Вы классический зритель');
-  } else if (perconalMovieDB.count >= 30) {
-    console.log('Вы киноман!!!');
-  } else {
-    console.log('Произошла ошибка!');
-  }
+//   if (perconalMovieDB.count < 10) {
+//     console.log('Просмотрено мало фильмов');
+//   } else if (perconalMovieDB.count >= 10 && perconalMovieDB.count < 30) {
+//     console.log('Вы классический зритель');
+//   } else if (perconalMovieDB.count >= 30) {
+//     console.log('Вы киноман!!!');
+//   } else {
+//     console.log('Произошла ошибка!');
+//   }
   
+// }
+
+// console.log(perconalMovieDB);
+
+// Функции
+// let num = 20;
+// function showFirstMessage(text) {
+//   console.log(text);
+//   let num = 10;
+// }
+
+// showFirstMessage('Привет Мир!');
+// console.log(num);
+
+// function calc(a, b) {
+//   return (a + b);
+// }
+// console.log(calc(50,50)); 
+// console.log(calc(10,6)); 
+// console.log(calc(3,2));
+
+// function ret() {
+//   let num = 50;
+//   return num;
+// }
+
+// const anotherNum = ret();
+// console.log(anotherNum);
+
+// const logger = function () {
+//   console.log('Wow!');
+// };
+// logger();
+
+// const calc = (a, b) => a + b;
+
+// let a = 3;
+//  function addTwo(x) {
+//    let ret = x + 2;
+//    return ret;
+//  }
+// let b = addTwo(a);
+//  console.log(b);
+
+//  function createCounter() {
+//      let counter = 0;
+//      const myFunction = function() {
+//        counter = counter + 1;
+//        return counter;
+//      };
+//      return myFunction;
+//    }
+//    const increment = createCounter();
+//   const c1 = increment();
+//   const c2 = increment();
+//  const c3 = increment();
+//  console.log('example increment', c1, c2, c3);
+
+//  let name = 'John';
+
+//  function sayHi() {
+//    alert('Hi' + name);
+//  }
+//  name = 'Pete';
+//  sayHi();
+ 
+//  function makeWorker() {
+//    let name = 'Pete';
+
+//    return function() {
+//      alert(name);
+//    };
+//  }
+
+//  let name = 'John';
+
+//  let work = makeWorker();
+
+//  work();
+
+function sayHiBye(firstName, lastName) {
+
+  function getFullName() {
+    return firstName + ' ' + lastName;
+  }
+  alert('Псс, Привет ' + getFullName());
+  alert('Ну что ж пока наша ' + getFullName());
 }
 
-console.log(perconalMovieDB);
+sayHiBye('Милая моя', 'Карина');
