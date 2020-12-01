@@ -1,51 +1,33 @@
 "use strict";
 
-// To String
+// let x = 5;
+// alert(x++);
 
-// 1)
-console.log(typeof(String(null)));
-console.log(typeof(String(3)));
+// [ ] + false - null + true 
+// console.log([] + false - null + true); //Ответ NaN
 
-// 2)
-console.log(typeof(5 + ''));
+// let y = 1;
+// let x = y = 2;
+// alert(x);
 
-const num = 5;
-console.log('https://vk.com/catalog/' + num);
+// console.log([] + 1 + 2); //Ответ 12
+// alert('1'[0]); //Ответ 1
 
-const fontSize = 26 + 'px';
+// console.log(2 && 1 && null && 0 && undefined); //Ответ null
 
-// To Number
+// *******------ Оператор И останавливается на лжи------ *****************
+// *******------ Оператор ИЛИ останавливается на правде------ *****************
 
-// 1)
-console.log(typeof(Number('3')));
+// console.log(!!( 1 && 2 ) === (1 && 2)); //Ответ не равны
+            // 3
+// alert( null || 2 && 3 || 4 ); //Ответ 3
 
-// 2)
-console.log(typeof(+'3'));
+// const a = [1, 2, 3];
+// const b = [1, 2, 3];
+// console.log(a == b);
 
-// 3)
-console.log(typeof(parseInt('15px', 10)));
+// alert(+Infinity);
 
-let answ = +prompt('Hello', '');
+// console.log('Ёжик' > 'яблоко');
 
-// To boolean
-
-// 0, '', null, undefined, NaN; Это все false (всегда будет неправдой)
-
-// 1) Способ
-let switcher = null;
-
-if (switcher) {
-  console.log('Working...');
-}
-
-switcher = 1;
-
-if (switcher) {
-  console.log('Working...');
-}
-
-// 2) Способ
-console.log(typeof(Boolean('3')));
-
-// 3) Способ
-console.log(typeof(!!'4444'));
+// console.log(0 || "" || 2 || undefined || true || falsе);
