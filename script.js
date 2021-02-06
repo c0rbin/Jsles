@@ -1,40 +1,22 @@
 "use strict";
 
-let num = 20;
+const str = 'tESt';
 
+console.log(str.toUpperCase());
+console.log(str.toLocaleLowerCase());
+console.log(str);
 
-function firstMessageShow(text) {
-  console.log(text);
-  
-  console.log(num);
-}
-firstMessageShow('Здравствуй Мир!');
-console.log(num);
+let fruit = 'Some fruit';
+console.log(fruit.indexOf('fruit'));
 
-// function calc(a, b) {
-//   return (a + b);
-// }
+const logg = 'Hello world!';
+console.log(logg.slice(6, 11));
+console.log(logg.substring(6, 11));
+console.log(logg.substr(6, 5));
 
-// console.log(calc(4,3));
-// console.log(calc(5,5));
-// console.log(calc(15,15));
+const num = 12.2;
+console.log(Math.round(num));
 
-function ret() {
-  let num = 50;
-  return num;
-}
-
-const anotherNum = ret();
-console.log(anotherNum);
-
-const logger = function() {
-  console.log('Hello!');
-};
-logger();
-
-const calc = (a, b) => {
-  console.log('1');
-  return a + b;
-};
-console.log(calc(4,5));
-//Работали над стрелочными функциями
+const test = '12.2px';
+// console.log(parseInt(test));
+console.log(parseFloat(test));
