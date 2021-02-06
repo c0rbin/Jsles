@@ -36,7 +36,7 @@ function rememberMyFilms() {
     }
   }
 }
-// rememberMyFilms();
+rememberMyFilms();
 
 function detectPersonalLevel() {
   if (perconalMovieDB.count < 10) {
@@ -49,7 +49,7 @@ function detectPersonalLevel() {
     console.log('Произошла ошибка!');
   }
 }
-// detectPersonalLevel();
+detectPersonalLevel();
 
 function showMyDB() {
   if (perconalMovieDB.privat != true) {
