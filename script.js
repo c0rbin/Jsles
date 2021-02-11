@@ -1,33 +1,98 @@
 "use strict";
 
-const arr = [10, 2, 13, 50, 6, 8];
-arr.sort(compareNum);
-console.log(arr);
+// const obj = {
+//   a: 5,
+//   b: 1
+// };
+// const copy = obj; //Ссылка на объект
+// copy.a = 10;
+// console.log(copy);
+// console.log(obj);
 
-function compareNum(a, b) {
-  return a - b;
+function copy(mainObj) {
+  let objCopy = {};
+
+  let key;
+  for (key in mainObj) {
+    objCopy[key] = mainObj[key];
+  }
+
+  return objCopy;
 }
-// arr[99] = 0;
-// console.log(arr.length);
-// console.log(arr);
 
-// arr.forEach(function(item, i, arr) {
-//   console.log(`Индекс ${i}: ${item} внутри массива ${arr}`);
-// });
-// arr.pop();
-// console.log(arr);
-// arr.push(10);
-// console.log(arr);
+const numbers = {
+  a: 2,
+  b: 5,
+  c: {
+    x: 7,
+    y: 4
+  }
+};
 
-// for (let i = 0; i < arr.length; i++) {
-//   console.log(arr[i]);
-// }
+const newNumbers = copy(numbers);
 
-// for (let value of arr) {
-//   console.log(value);
-// }
+newNumbers.a = 41;
+newNumbers.c.x = 14;
+// console.log(numbers);
+// console.log(newNumbers);
 
-// const str = prompt('', '');
-// const products = str.split(', ');
-// products.sort();
-// console.log(products.join('; '));
+const add = {
+  d: 17,
+  e: 20
+};
+
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+console.log(add);
+console.log(clone);
+
+const oldArray = ['a', 'b', 'c'];
+
+const newArray = oldArray.slice();
+newArray[1] = 9;
+console.log(newArray);
+console.log(oldArray);
+
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs =   ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'fb'];
+
+console.log(internet);
+
+function log(a, b, c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+
+const num = [2, 5, 7]; 
+
+log(...num);
+
+const array = ['a', 'b'];
+
+const newArr = [...array];
+console.log(newArr);
+
+const q = {
+  one: 1,
+  two: 2
+};
+
+const newObjes = {...q};
+
+console.log(q);
+console.log(newObjes);
+
+const bond = {
+  sif: 'halk'
+};
+
+const fik = {
+  hex: 'mili'
+};
+
+const game = Object.assign(bond, fik);
+
+console.log(game);
