@@ -1,45 +1,21 @@
 "use strict";
 
-// to String
+// let x = 5;
+// alert(x++);
 
-// 1)
-console.log(typeof(String(4)));
-console.log(typeof(null));
+// [ ] + false - null + true  //Ответ NaN
 
-// 2)
-console.log(typeof(5 + ''));
+// let y = 1;
+// let x = y = 2;
+// alert(x);
+// console.log([] + 1 + 2);
+// // 2 && 1 && null && 0 && undefined ?
 
-const num = 5;
+// console.log(2 && 1 && null && 0 && undefined);
 
-console.log('https://vk.com/catalog/' + 5);
-
-const fontSize = 26 + 'px';
-
-//to Number
-// 1)
-console.log(typeof(Number('4')));
-
-// 2
-console.log(typeof(+'5'));
-
-//3
-console.log(typeof(parseInt('15px', 10)));
-
-//to Boolean
-//Ниже приводим пример того что всегда будет ложью false
-// 0, '', null, undefined, NaN
-// 1)
-let switcher = null;
-
-if (switcher) {
-  console.log('Working...');
-}
-switcher = 1;
-if (switcher) {
-  console.log('Working...');
-}
-// 2)
-console.log(typeof(Boolean('4')));
-
-// 3)
-console.log(typeof(!!'345'));
+// console.log(!!(1 && 2 ));
+// console.log((1 && 2 ));
+alert( null || 2 && 3 || 4 ); 
+const a = [1, 2, 3]; 
+const b = [1, 2, 3]; 
+console.log(a == b);
