@@ -1,41 +1,111 @@
 "use strict";
 
-// const box = document.getElementById('box');
-// const buttons = document.getElementsByTagName('button');
-// const circle = document.getElementsByClassName('circle');
-// const hearts = document.querySelectorAll('.heart');
-// const oneHeart = document.querySelector('.heart');
-// const wrapper = document.querySelector('.wrapper');
-// box.style.backgroundColor = 'blue';
-// box.style.width = '500px';
-// box.style.marginLeft = '35px';
-// box.style.cssText = 'background-color: pink; width: 200px';
-// buttons[3].style.backgroundColor = 'green';
-// circle[1].style.backgroundColor = 'green';
+const personalMovieDB = {
+  count: 0,
+  movies: {},
+  actors: {},
+  genres: [],
+  privat: false,
+  start: function() {
+    personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    
+    while (personalMovieDB.count == null || personalMovieDB.count == '' || isNaN(personalMovieDB.count)) {
+      personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+    }
+  },
+  rememberMyFilms: function() {
+    for (let i = 0; i < 2; i++) {
+      const a = prompt('Один из последних просмотренных фильмов?', ''),
+            b = +prompt('На сколько оцените его?', '');
+      
+      if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('Done!');
+      } else {
+        console.log('Error!');
+        i--;
+      }
+    }
+  },
+  detectPersonalLevel: function() {
+    if (personalMovieDB.count < 10) {
+      console.log('Просмотрено довольно мало фильмов');
+    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+      console.log('Вы классический зритель!');
+    } else if (personalMovieDB.count >= 30) {
+      console.log('Вы классический зритель!');
+    } else {
+      console.log('Произошла ошибка!');
+    }
+  },
+  showMyDB: function(hidden) {
+    if(!hidden) {
+      console.log(personalMovieDB);
+    }
+  },
+  toggleVisibleMyDB: function() {
+    if (personalMovieDB.privat == false) {
+      personalMovieDB.privat = true;
+    } else if (personalMovieDB.privat == true) {
+      personalMovieDB.privat = false;
+    }
+  },
+  writeYourgenres: function() {
+    for (let i = 1; i < 2; i++) {
+      // let genre = prompt(`Ваш любимый жанр под номером ${i}`);
 
-// for (let i = 0; i < hearts.length; i++) {
-//   hearts[i].style.backgroundColor = 'blue';
-// }
-// hearts.forEach(item => {
-//   item.style.backgroundColor = 'green';
+      // if (genre == null || genre == '') {
+      //   console.log('Нельзя оставлять пустую строку либо отменять');
+      //   i--;
+      // } else {
+      //   personalMovieDB.genres[i - 1] = genre;
+      // }
+      let genre = prompt(`Введите ваши любимые жанры через запятую`).toLowerCase();
+      if (genre == null || genre == '') {
+          console.log('Нельзя оставлять пустую строку либо отменять');
+          i--;
+        } else {
+          personalMovieDB.genres = genre.split(', ');
+          personalMovieDB.genres.sort();
+        }
+    }
+    personalMovieDB.genres.forEach((item, i) => {
+      console.log(`Любимый жанр ${i + 1} - это ${item}`);
+    });
+  }
+};
+
+const btn = document.querySelectorAll('button'),
+      overlay = document.querySelector('.overlay');
+
+// btn.addEventListener('click', () => {
+//   alert('Jace');
 // });
 
-// const div = document.createElement('div');
-// // const text = document.createTextNode('Тут был я');
-// div.classList.add('black');
-// // document.body.append(div);
-// wrapper.append(div);
-// wrapper.prepend(div);
-// hearts[0].before(div);
-// hearts[0].after(div);
-// circle[0].remove();
-// hearts[1].replaceWith(circle[1]);
+// let i = 0;
+const deleteElement = (e) => {
+  console.log(e.currentTarget);
+  console.log(e.type);
+  // i++;
+  // if (i == 3) {
+  //   btn.removeEventListener('click', deleteElement);
+  // }
+};
 
-/*----Устаревшие методы но тоже встречаются в коде------ */
-// wrapper.appendChild(div);
-// wrapper.insertBefore(div, hearts[1]);
-// wrapper.removeChild(hearts[0]);  //Удаляет элемент
-// wrapper.replaceChild(circle[0], hearts[1]);
-// div.innerHTML = '<h1>Hello Miass</h1>';
-// div.textContent = 'RumRUM';
-// div.insertAdjacentHTML("beforeend", "<h3>Hi bob</h3>");
+
+// btn.addEventListener('click', deleteElement);
+// overlay.addEventListener('click', deleteElement);
+
+btn.forEach(item => {
+  item.addEventListener('click', deleteElement, {once: true});
+  overlay.addEventListener('click', deleteElement);
+});
+
+const link = document.querySelector('a');
+
+link.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  console.log(e.target);
+
+});
