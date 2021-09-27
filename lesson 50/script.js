@@ -2,15 +2,10 @@
 
 const persone = {
   name: 'Alex',
-  tel: '+79214587',
-  parent: {
-    mom: 'Olga',
-    dad: 'dad'
+  tel: '+75241',
+  parents: {
+    dad: 'Mike',
+    mom: 'Olga'
   }
 };
-
-const clone = JSON.parse(JSON.stringify(persone));
-clone.parent.mom = 'Ann';
-
-console.log(persone);
-console.log(clone);
+const clone =  JSON.parse(JSON.stringify(persone));
