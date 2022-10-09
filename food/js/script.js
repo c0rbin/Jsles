@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   /* ========= Timer ============= */
 
-  const deadline = "2021-05-14";
+  const deadline = "2022-02-14";
 
   function getTimeRemaining(endtime) {
     const t = Date.parse(endtime) - Date.parse(new Date()),
@@ -166,7 +166,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
       if (this.classes.length === 0) {
         this.element = 'menu__item';
-        element.classList.add(this.element)
+        element.classList.add(this.element);
       } else {
         this.classes.forEach(className => element.classList.add(className));
       }
@@ -214,4 +214,47 @@ window.addEventListener("DOMContentLoaded", () => {
     '.menu .container',
     'menu__item'
    ).render();
+
+  // <FORMS>=============================================================================================
+    
+    const forms = document.querySelectorAll('form');
+
+    const message= {
+      loading: 'Загрузка',
+      success: 'Спасибо! Скоро мы с вами свяжемся!',
+      failure: 'Что-то пошло не так...'
+    };
+
+    forms.forEach(item => {
+      posrData(item);
+    });
+
+    function posrData(form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const statusMessage = document.createElement('div');
+        statusMessage.classList.add('status');
+        statusMessage.textContent = message.loading;
+        form.append(statusMessage);
+
+        const request = new XMLHttpRequest();
+        request.open('POST', 'server.php');
+
+        // request.setRequestHeader('Content-type', 'multipart/form-data');
+        const formData = new FormData(form);
+
+        request.send(formData);
+
+        request.addEventListener('load', () => {
+          if (request.status === 200) {
+            console.log(request.response);
+            statusMessage.textContent = message.success;
+          } else {
+            statusMessage.textContent = message.failure;
+          }
+        });
+      });
+    }
+  // </FORMS>=============================================================================================
 });
